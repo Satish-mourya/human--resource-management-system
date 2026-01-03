@@ -5,6 +5,10 @@ import authRouter from "./routes/authRoutes.js";
 import connectDB from "./config/db.js";
 import profileRouter from "./routes/profileRoutes.js";
 import attendanceRouter from "./routes/attendanceRoutes.js";
+import leaveRouter from "./routes/leaveRoutes.js";
+import dashboardRouter from "./routes/dashboardRoutes.js";
+import hrDashboardRouter from "./routes/hrDashboardRoutes.js";
+
 
 dotenv.config();
 
@@ -22,6 +26,9 @@ connectDB()
 app.use("/api/auth", authRouter);
 app.use("/api/employee",profileRouter);
 app.use('/api/attendance',attendanceRouter);
+app.use("/api/leaves",leaveRouter)
+app.use("/api/employee",dashboardRouter)
+app.use("/api/hr",hrDashboardRouter);
 
 // intial point
 app.get("/", (req, res) => {
