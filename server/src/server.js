@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import authRouter from "./routes/authRoutes.js";
 import connectDB from "./config/db.js";
 import profileRouter from "./routes/profileRoutes.js";
+import attendanceRouter from "./routes/attendanceRoutes.js";
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ connectDB()
 // Routes
 app.use("/api/auth", authRouter);
 app.use("/api/employee",profileRouter);
+app.use('/api/attendance',attendanceRouter);
 
 // intial point
 app.get("/", (req, res) => {
