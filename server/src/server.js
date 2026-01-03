@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import authRoutes from "./routes/authRoutes.js";
+import authRouter from "./routes/authRoutes.js";
 import connectDB from "./config/db.js";
+import profileRouter from "./routes/profileRoutes.js";
 
 dotenv.config();
 
@@ -17,7 +18,8 @@ app.use(express.json());
 connectDB()
 
 // Routes
-app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRouter);
+app.use("/api/employee",profileRouter);
 
 // intial point
 app.get("/", (req, res) => {

@@ -27,6 +27,31 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    address: {
+      type: String,
+      default: "",
+    },
+
+    phone: {
+      type: String,
+      default: "",
+    },
+    profileImage: {
+      type: String,
+      default: "",
+    },
+    jobTitle: {
+      type: String,
+      default: "",
+    },
+    department: {
+      type: String,
+      default: "",
+    },
+    salary: {
+      type: Number,
+      default: 0, // read-only for employee
+    },
   },
   { timestamps: true }
 );
